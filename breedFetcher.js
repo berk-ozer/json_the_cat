@@ -1,7 +1,6 @@
 const request = require('request');
 
-const BASE_URL = 'https://api.thecatapi.com/v1/breeds/search?q=';
-const requestedUrl = BASE_URL + process.argv[2];
+const requestedUrl = 'https://api.thecatapi.com/v1/breeds/search?q=' + process.argv[2];
 
 request(requestedUrl, (error, response, body) => {
   if (error || response.statusCode !== 200) {
@@ -16,5 +15,4 @@ request(requestedUrl, (error, response, body) => {
   } else {
     console.log('Sorry, breed not found.');
   }
-
 });
